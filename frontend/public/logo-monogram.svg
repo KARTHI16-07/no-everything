@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <!-- NO EVERYTHING Custom Geometric NE Monogram -->
+  <!-- N -->
+  <polyline points="12,38 12,12 36,38 36,12" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter" />
+  
+  <!-- E Vertical Spine -->
+  <line x1="50" y1="12" x2="50" y2="38" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" />
+  <!-- E Top Arm -->
+  <line x1="50" y1="12" x2="72" y2="12" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" />
+  <!-- E Bottom Arm -->
+  <line x1="50" y1="38" x2="72" y2="38" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" />
+  
+  <!-- Connecting bridge from N middle through E middle -->
+  <line x1="36" y1="25" x2="72" y2="25" stroke="currentColor" stroke-width="3.5" stroke-linecap="square" />
+  
+  <!-- Thin horizontal line extending towards the right -->
+  <line x1="72" y1="25" x2="136" y2="25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Finishing circular dot -->
+  <circle cx="142" cy="25" r="3.5" fill="currentColor" />
+</svg>

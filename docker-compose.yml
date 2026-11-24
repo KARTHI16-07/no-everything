@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: no-everything-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: noeverything
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_USER: ne_user
+      MYSQL_PASSWORD: ne_password123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: no-everything-backend
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/noeverything?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ne_user
+      SPRING_DATASOURCE_PASSWORD: ne_password123
+      SPRING_DATASOURCE_DRIVER: com.mysql.cj.jdbc.Driver
+      JWT_SECRET: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      FRONTEND_ORIGIN: http://localhost:5173
+
+volumes:
+  mysql_data:
